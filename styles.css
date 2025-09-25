@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+:root {
+    --primary-color: #BF3326;
+    --background-color: #ffffff;
+    --dark-color: #151515;
+    --footer-color: #242F73;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILIDADES */
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+/* HEADER */
+.container-hero {
+    background-color: var(--background-color);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+
+
+.logo-img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+
+/* BANNER */
+.banner {
+    position: relative;
+    height: 70rem;
+    background: url('img/banner.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.content-banner {
+    position: relative;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.content-banner p {
+    color: var(--primary-color);
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.content-banner h2 {
+    color: var(--background-color);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.content-banner a {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--primary-color);
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border-radius: 3rem;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    background-color: var(--background-color);
+}
+
+/* FEATURES */
+.container-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.card-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    min-height: 180px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-feature:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenido de la tarjeta */
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: justify;
+}
+
+.feature-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.feature-content span {
+    font-weight: 800;
+    font-size: 2.2rem; /* Ajustado */
+    color: var(--dark-color);
+    transition: color 0.3s ease;
+}
+
+.card-feature:hover .feature-content span {
+    color: var(--primary-color);
+}
+
+.feature-content p {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 600;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.card-feature:hover .feature-content p {
+    color: #222;
+}
+
+/* CATEGORIES */
+.top-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.container-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.card-category {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    gap: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+
+/* Aplicar la misma clase a todas las categorías */
+.category-p1 {
+    background-image: linear-gradient(#00000080, #00000080), url('img/sh1\ -\ copia.jpg'); 
+}
+
+.category-p2 {
+    background-image: linear-gradient(#00000080, #00000080), url('img/sh2.jpg');
+}
+
+.category-p3 {
+    background-image: url('img/sh3\ -\ copia.jpg');
+}
+
+.card-category p {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.card-category p::after {
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.card-category span {
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card-category span:hover {
+    color: var(--primary-color);
+}
+
+
+
+/* GALLERY */
+
+.carrusel {
+    position: relative;
+    width: 80%; /* Ajusta el ancho del carrusel como un porcentaje del contenedor padre */
+    margin: 4rem auto; /* Espaciado superior e inferior, centrado horizontalmente */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
+}
+
+.carrusel-contenedor {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 100%;
+}
+
+.carrusel-imagen {
+    min-width: 100%; /* Cada imagen debe ocupar el 100% del ancho del contenedor */
+    height: 25rem; /* Ajusta la altura usando rem */
+    background-size: cover;
+    background-position: center;
+}
+
+.carrusel-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel-navegacion {
+    position: absolute;
+    bottom: 1rem; /* Espaciado desde el fondo usando rem */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
+}
+
+.carrusel-anterior, .carrusel-siguiente {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem; /* Ajusta el tamaño del padding usando rem */
+    font-size: 1rem; /* Tamaño de fuente usando rem */
+    cursor: pointer;
+    margin: 0 0.5rem; /* Espaciado horizontal entre botones usando rem */
+}
+
+.carrusel-anterior:hover, .carrusel-siguiente:hover {
+    background-color: #444;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Tablet (hasta 1024px) */
+@media (max-width: 1024px) {
+    /* Banner */
+    .banner {
+        height: 50rem;
+        background-attachment: scroll; /* Mejor rendimiento en móviles */
+    }
+    
+    .content-banner p {
+        font-size: 4rem;
+    }
+    
+    .content-banner h2 {
+        font-size: 2rem;
+    }
+    
+    /* Features */
+    .container-features {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem;
+    }
+    
+    /* Categories */
+    .container-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móvil (hasta 768px) */
+@media (max-width: 768px) {
+    /* Banner */
+    .banner {
+        height: auto;
+        padding: 10rem 2rem;
+    }
+    
+    .content-banner p {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .content-banner h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    /* Features & Categories */
+    .container-features,
+    .container-categories {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .card-feature {
+        padding: 2rem;
+    }
+    
+    /* Carrusel */
+    .carrusel {
+        width: 95%;
+        margin: 2rem auto;
+    }
+    
+    .carrusel-imagen {
+        height: 20rem;
+    }
+    
+    /* Footer (si no está en otro archivo) */
+    .container-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .footer-section {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Móvil pequeño (hasta 480px) */
+@media (max-width: 480px) {
+    /* Ajustes finos para textos */
+    .content-banner p {
+        font-size: 2.5rem;
+    }
+    
+    .feature-content span {
+        font-size: 1.8rem;
+    }
+    
+    .card-category p {
+        font-size: 2rem;
+    }
+    
+    /* Carrusel más compacto */
+    .carrusel-imagen {
+        height: 15rem;
+    }
+}

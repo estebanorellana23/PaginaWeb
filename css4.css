@@ -1,0 +1,122 @@
+/* ========== ABOUT US SECTION ========== */
+.about-section {
+    margin-bottom: 100px;
+    padding: 100px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.about-section .heading-2 {
+    font-size: 4.5rem;
+    margin-top: -40px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 700;
+}
+
+.about-section .section-description {
+    font-size: 2rem;
+    color: #555;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    line-height: 1.8;
+}
+
+.about-section .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-section .card-feature {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-section .feature-content {
+    width: 100%;
+}
+
+.about-section .feature-content span {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-section .feature-content p {
+    font-size: 1.8rem;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.about-section .feature-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.about-section .feature-content ul li {
+    font-size: 1.6rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    /* About Section */
+    .about-section .heading-2 {
+        font-size: 3rem;
+    }
+    .about-section .section-description {
+        font-size: 1.5rem;
+    }
+    .about-section .cards-container {
+        grid-template-columns: 1fr;
+    }
+    .about-section .card-feature {
+        padding: 20px;
+    }
+    .about-section .feature-content span {
+        font-size: 2rem;
+    }
+    .about-section .feature-content p {
+        font-size: 1.4rem;
+    }
+
+    
+}
+
+@media (max-width: 576px) {
+    /* About Section */
+    .about-section .heading-2 {
+        font-size: 2.5rem;
+    }
+    .about-section .section-description {
+        font-size: 1.3rem;
+    }
+    .about-section .card-feature {
+        padding: 15px;
+    }
+    .about-section .feature-content span {
+        font-size: 1.8rem;
+    }
+    .about-section .feature-content p {
+        font-size: 1.3rem;
+    }
+
+    
+}

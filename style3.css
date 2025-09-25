@@ -1,0 +1,195 @@
+/* Estilos para el contenedor del título */
+.title-container {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 40px; /* Espacio entre el título y el contenido */
+}
+
+.heading-2 {
+    font-size: 3rem; /* Tamaño de letra aumentado */
+    color: #333; /* Color del texto */
+    font-weight: 700; /* Grosor de la fuente */
+}
+
+/* Estilos para la sección "Products" */
+.top-products {
+    padding: 80px 20px;
+    background: none; /* Quitamos el fondo gris */
+}
+
+.container-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.card-products {
+    background: #fff; /* Fondo blanco para las tarjetas */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Para que la imagen no sobresalga */
+}
+
+.card-products:hover {
+    transform: translateY(-10px); /* Movimiento hacia arriba */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.container-img img {
+    width: 100%; /* Ajustar la imagen al ancho de la tarjeta */
+    height: auto; /* Mantener la proporción de la imagen */
+    display: block;
+}
+
+.content-card-product {
+    padding: 20px;
+    text-align: center;
+}
+
+.content-card-product h3 {
+    font-size: 1.8rem; /* Tamaño de letra aumentado */
+    color: #333; /* Color del texto */
+    margin-bottom: 10px;
+}
+
+/* Estilos para la sección "Our Services" */
+.container-features2 {
+    padding: 80px 20px;
+    background: none; /* Quitamos el fondo gris */
+}
+
+.container-services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    max-width: 1500px;
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.card-feature {
+    background: #fff; /* Fondo blanco para las tarjetas */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-feature:hover {
+    transform: translateY(-10px); /* Movimiento hacia arriba */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.feature-content {
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.feature-content span {
+    font-size: 1.8rem; /* Tamaño de letra aumentado */
+    color: var(--primary-color); /* Color azul para el título */
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.feature-content p {
+    font-size: 1.5rem; /* Tamaño de letra para el contenido */
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    /* Products Section */
+    .container-products {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    /* Services Section */
+    .container-services {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .card-feature {
+        padding: 20px;
+    }
+
+    .heading-2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Mobile (hasta 768px) */
+@media (max-width: 768px) {
+    /* Products Section */
+    .container-products {
+        grid-template-columns: 1fr; /* 1 columna */
+        max-width: 500px;
+    }
+
+    /* Services Section */
+    .container-services {
+        grid-template-columns: 1fr; /* 1 columna */
+        max-width: 500px;
+    }
+
+    .top-products,
+    .container-features2 {
+        padding: 50px 15px;
+    }
+
+    .card-products {
+        margin-bottom: 20px;
+    }
+
+    .card-products:hover {
+        transform: none; /* Desactivar animación en móvil */
+    }
+
+    .heading-2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .feature-content span {
+        font-size: 1.6rem;
+    }
+
+    .feature-content p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Mobile Pequeño (hasta 480px) */
+@media (max-width: 480px) {
+    .heading-2 {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    .content-card-product h3 {
+        font-size: 1.6rem;
+    }
+
+    .card-feature {
+        padding: 15px;
+    }
+
+    .feature-content span {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .card-products {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    }
+}

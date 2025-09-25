@@ -1,0 +1,188 @@
+.title-container {
+    display: flex;
+    flex-direction: column; /* Acomoda los elementos en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.heading-2 {
+    font-size: 3rem; /* Tamaño del título */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem; /* Espacio entre título y descripción */
+}
+
+.section-description {
+    font-size: 1.8rem;
+    color: #555;
+    max-width: 800px; /* Ajuste de ancho para mejor lectura */
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+.container-clients {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    grid-template-rows: repeat(2, auto); /* 2 filas */
+    gap: 2rem; /* Espacio entre las tarjetas de producto */
+    margin-bottom: 10rem;
+   
+}
+
+.card-clients {
+    background-color: #fff;
+    width: 200px; /* Ancho fijo */
+    height: 200px; /* Alto igual al ancho para que sea cuadrado */
+    padding: 1rem; /* Ajuste de espacio interno */
+    border-radius: .5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
+    justify-content: center; /* Centrar contenido */
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.card-clients:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.container-img img {
+    max-width: 100px; /* Ajusta el tamaño máximo */
+    max-height: 100px; /* Asegura que no se deforme */
+    object-fit: contain;
+}
+
+.container-img img {
+    width: 100%;
+    max-width: 150px; /* Ajusta este valor según el tamaño deseado */
+    filter: grayscale(500%); /* Imagen en escala de grises por defecto */
+    transition: filter 0.3s ease-in-out;
+    object-fit: contain; /* Evita deformaciones */
+    display: block;
+    margin: 0 auto;
+}
+
+.card-clients:hover .container-img img {
+    filter: grayscale(0%); /* Vuelve a color cuando se pasa el mouse */
+}
+
+.button-group {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.button-group span {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: #fff;
+    border-radius: 50%;
+    padding: .5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button-group span:hover {
+    background-color: var(--primary-color); /* Cambia el fondo al pasar el mouse */
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1200px) {
+    .container-clients {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas para pantallas grandes más pequeñas */
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-clients {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas para tabletas */
+        gap: 1.5rem;
+    }
+    
+    .card-clients {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .container-img img {
+        max-width: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-clients {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para móviles grandes */
+        gap: 1rem;
+        margin-bottom: 5rem;
+    }
+    
+    .heading-2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-description {
+        font-size: 1.6rem;
+        max-width: 90%;
+    }
+    
+    .card-clients {
+        width: 160px;
+        height: 160px;
+        padding: 0.8rem;
+    }
+    
+    .container-img img {
+        max-width: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-clients {
+        grid-template-columns: 1fr; /* 1 columna para móviles pequeños */
+        max-width: 300px;
+        margin: 0 auto 3rem;
+    }
+    
+    .card-clients {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1; /* Mantener relación cuadrada */
+        padding: 1rem;
+    }
+    
+    .container-img img {
+        max-width: 80px;
+    }
+    
+    .heading-2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-description {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .card-clients {
+        padding: 0.5rem;
+    }
+    
+    .container-img img {
+        max-width: 70px;
+    }
+    
+    .heading-2 {
+        font-size: 2rem;
+    }
+}

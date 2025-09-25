@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/navbar.css">
+    <link rel="stylesheet" href="src/footer.css">
+    <link rel="stylesheet" href="styles2.css">
+
+    
+
+    <link rel="stylesheet" href="css7.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="pagina3">
+    <header>
+        <div class="container-hero">
+            <div class="container-logo">
+                <a href="index.html"> <!-- Redirige a la página principal -->
+                    <img src="img/logo.png" alt="Needletex Logo" class="logo-img">
+                </a>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products&services.html">Products & Services</a></li>
+                    <li><a href="aboutus.html">Who We Are</a></li>
+                    <li><a href="ournetwork.html">Our Network</a></li>
+                    <li><a href="ourclients.html">Clients & Testimonials</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+
+                
+            </nav>
+        </div>
+    </header>
+    <div class="network-intro">
+        <h2>OUR NETWORK</h2>
+        <p>We collaborate with leading companies, representing them with professionalism and dedication. 
+        Our network is built on strong partnerships, ensuring mutual growth and success. 
+        By working closely with each business, we provide tailored solutions that enhance their reach and impact.</p>
+    </div>
+ <!-- Carrusel -->
+ <div id="carousel-container">
+    <div id="carousel">
+        <button id="prev" class="carousel-arrow">❮</button>
+        <div class="carousel-content">
+            <img class="carousel-logo" src="" alt="Company Logo">
+            <h3 class="carousel-text">Guatemala y Latam</h3>
+            <a class="carousel-link" href="#" target="_blank">More about us</a>
+        </div>
+        <button id="next" class="carousel-arrow">❯</button>
+    </div>
+</div>
+
+
+<!-- Mapa -->
+<div id="map-container">
+    <div id="map"></div>
+</div>
+
+<script>
+    var map = L.map('map', {
+    maxBounds: [[-90, -180], [90, 180]],
+    maxBoundsViscosity: 1.0,
+    worldCopyJump: false
+}).setView([20, 0], 2);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd'
+}).addTo(map);
+
+var locations = [
+    { lat: 14.6349, lng: -90.5069, name: "Grupo Global", url: "http://www.grupoglobalgt.com/", logo: "img/grupog.png", description: "With presence in Guatemala and Florida. Specialists in manufacturing promotional products, thermoforming and textiles." },
+    { lat: 26.10038360965851, lng: -80.40053290083009, name: "Global Americas", url: "https://www.grupoglobalgt.com/globalamericas.html", logo: "img/global_americas.png", description: "We are an ideal strategic partner for import/export between Guatemala and the USA, with operations in both countries and headquarters in Weston, Florida." },
+    { lat: 40.43052030452645, lng: -3.6974037866246303, name: "Nextil", url: "http://www.nextil.com/", logo: "img/logo-nextil-h.png", description: "Leaders in textiles and fashion referents in Guatemala. Our parent company, Nextil, is headquartered in Madrid, Spain, while our textile plant is located near Pavón, Guatemala." },
+    { lat: 32.779167, lng: -96.808891, name: "Insight Quality", url: "http://www.insight-quality.com/", logo: "img/insight.png", description: "Insight Quality provides expert product inspections, factory audits, lab testing, rework services, and consulting to ensure compliance and quality." },
+    { lat: 23.685, lng: 90.3563, name: "Assurer World", url: "http://www.assurerworld.com/", logo: "img/assure.png", description: "With a presence in Bangladesh, Turkey, India, Egypt, and across Asia, we specialize in home textiles, apparel, beauty products, food, minerals, and medical textiles." },
+    { lat: 14.416090520497484, lng: -90.66540810000001  , name: "Annray Test", url: "http://www.annraytest.com/", logo: "img/annray.png", description: "Located in Palin, Guatemala, we are experts in textile, footwear, toy, and hardline testing, offering inspections, audits, and biodegradability assessments." }
+];
+
+var markers = [];
+locations.forEach((loc, index) => {
+    var marker = L.marker([loc.lat, loc.lng]).addTo(map);
+    marker.bindPopup(`
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${loc.logo}" style="width: 60px; height: auto;" />
+            <div>
+                <strong>${loc.name}</strong>
+                <p style="margin: 0; font-size: 14px;">${loc.description}</p>
+                <p style="margin: 0; font-size: 14px;">
+                    <a href='${loc.url}' target='_blank' style="color: blue; text-decoration: none; font-weight: bold;">More about us</a>
+                </p>
+            </div>
+        </div>
+    `);
+    markers.push(marker);
+});
+
+var currentIndex = 0;
+
+function updateCarousel(index) {
+    $(".carousel-logo").attr("src", locations[index].logo);
+    $(".carousel-logo").attr("alt", locations[index].name);
+    $(".carousel-text").text(locations[index].name);
+    $(".carousel-link").attr("href", locations[index].url);
+
+    map.setView([locations[index].lat, locations[index].lng], 4);
+
+    setTimeout(() => {
+        markers[index].openPopup();
+    }, 500);
+}
+
+$("#prev").click(function() {
+    currentIndex = (currentIndex - 1 + locations.length) % locations.length;
+    updateCarousel(currentIndex);
+});
+
+$("#next").click(function() {
+    currentIndex = (currentIndex + 1) % locations.length;
+    updateCarousel(currentIndex);
+});
+
+updateCarousel(currentIndex);
+
+</script>
+
+
+
+<footer class="footer">
+    <div class="container-footer">
+        <div class="footer-section">
+            <h3 class="title-footer">About Us</h3>
+            <p>We have been in business for over 10 years and have 30+ years of experience in the Apparel Business. Our expertise has helped us build strong business relationships and maintain high-quality standards with speed to market. We also own factories in Peru and the Dominican Republic, which allows us to ensure better control over production and delivery timelines.
+            </p>
+        </div>
+
+        <!-- CUSTOMERS -->
+        <div class="footer-section">
+            <h3 class="title-footer">Customers</h3>
+            <ul>
+                <li>Local Boy Outfitters</li>
+                <li>Heybo</li>
+                <li>Disney</li>
+                <li>Mars/M&M´S</li>
+                <li>Grundens</li>
+                <li>Pickleball Bella</li>
+                <li>Skort Obsession</li>
+                <li>Southern Boy Co</li>
+                <li>American Eagle Outfitters</li>
+                <li>Spirit Jerseys</li>
+            </ul>
+        </div>
+
+        <!-- HEADQUARTERS -->
+        <div class="footer-section">
+            <h3 class="title-footer">Headquarters</h3>
+            <p><strong>Main Office:</strong> Orlando, Florida</p>
+            <ul>
+                <li>5006 Weeping Holly Ct, Winter Garden, Florida, 3787</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (407) 559-4587</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (407) 559-4591</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (551) 275-1714</li>
+            </ul>
+            <br><br>
+            <p><strong>Main Office:</strong> Guatemala City</p>
+            <ul>
+                <li>51 Calle 15-62, Zona 12, Guatemala</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (502) 2383-5300</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (954) 353-2965</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (502) 5308-1476</li>
+            </ul>
+            <br><br>
+            <p><strong>Sourcing Office:</strong> Dhaka, Bangladesh</p>
+            <ul>
+                <li>Versatile Creation Ltd, House-38, Road-05, Sector-03, Uttara-1230, Dhaka</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (880) 2 7911537</li>
+                <li class="contact-item"><i class="fas fa-phone"></i> (880) 2 58957276</li>
+            </ul>
+        </div>
+
+<!-- CONTACT US -->
+<div class="footer-section contact-section">
+<h3 class="title-footer">Contact Us</h3>
+
+<div class="contact-grid">
+    <!-- Director -->
+    <div class="contact-card">
+        <h4>Director</h4>
+        <p><strong>Jorge Villanueva</strong></p>
+        <p><i class="fas fa-phone"></i> (502) 5308-1476</p>
+        <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:jorgev@needletex.com">jorgev@needletex.com</a>
+        </p>
+    </div>
+</div>
+</div>
+
+
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.navbar .fa-bars');
+            const menu = document.querySelector('.navbar .menu');
+            
+            menuToggle.addEventListener('click', function() {
+                menu.classList.toggle('show');
+                // Animación opcional: cambia el ícono a "X" (requiere FontAwesome)
+                this.classList.toggle('fa-times');
+            });
+    
+            // Opcional: Cerrar menú al hacer clic en un enlace
+            const menuLinks = document.querySelectorAll('.menu a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => menu.classList.remove('show'));
+            });
+        });
+    </script>
+</footer>
+</body>
+</html>
+

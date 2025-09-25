@@ -1,0 +1,367 @@
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--footer-color);
+    padding: 5rem 0;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container-footer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* SECCIONES */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* TITULOS */
+.title-footer {
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 0.9rem;
+    text-align: center;
+    color: #ffffff !important;
+}
+
+.footer-section p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-weight: 300;
+    text-align: center;
+}
+
+.footer-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section ul li {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2;
+}
+
+/* ICONOS Y CONTACTO */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.contact-item i {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+/* Sección Contact Us */
+.contact-section {
+    text-align: center;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 220px;
+    max-width: 280px;
+}
+
+.contact-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--primary-color);
+}
+
+.contact-card i {
+    margin-right: 0.5rem;
+    color: #ffffff;
+}
+
+.newsletter {
+    color: #fff;
+}
+
+.title-footer {
+    color: initial;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content input {
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #d2b495;
+    cursor: pointer;
+    padding: 0.5rem 0 1.2rem;
+    color: var(--dark-color);
+    display: block;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    width: 100%;
+    font-family: inherit;
+}
+
+.content input::-webkit-input-placeholder {
+    color: #eee;
+}
+
+.content button {
+    border: none;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.content button::hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* Estilos generales aquí... */
+
+/* Media Queries - Para pantallas de 992px o menos */
+@media (max-width: 992px) {
+    .container-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-section {
+        flex: 1 1 50%;
+    }
+}
+
+/* Media Queries - Para pantallas de 768px o menos */
+@media (max-width: 768px) {
+    html {
+        font-size: 55%; 
+    }
+    .hero {
+        padding: 2rem;
+    }
+    .customer-support {
+        display: none;
+    }
+    .content-shopping-cart {
+        display: none;
+    }
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    .navbar .fa-bars {
+        display: block;
+        color: #fff;
+        font-size: 3rem;
+    }
+    .menu {
+        display: none;
+    }
+    .content-banner {
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 25rem 0;
+    }
+    .container-features {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 3rem 2rem;
+    }
+    .card-feature {
+        padding: 2rem;
+    }
+    .heading-1 {
+        font-size: 2.4rem;
+    }
+    .card-category {
+        height: 12rem;
+    }
+    .card-category p {
+        font-size: 2rem;   
+        text-align: center;
+        line-height: 1;
+    }
+    .card-category span {
+        font-size: 1.4rem;
+    }
+    .container-options {
+        align-items: center;
+    }
+    .container-options span {
+        text-align: center;
+        padding: 1rem 2rem;
+    }
+    .container-products {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    }
+    .carrusel {
+        grid-template-rows: repeat(2, 15rem);
+    }
+    .container-blogs {
+        overflow: hidden;
+        grid-template-columns: 1fr 1fr;
+    }
+    .menu-footer {
+        grid-template-columns: 2, 1fr;
+    }
+    .copyright {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+/* Media Queries - Para pantallas de 468px o menos */
+@media (max-width: 468px) {
+    html {
+        font-size: 50%;
+    }
+    .hero {
+        padding: 1rem;
+    }
+    .customer-support, .content-shopping-cart {
+        display: none;
+    }
+    .navbar img.logo-img {
+        max-width: 100%;
+        height: auto;
+    }
+    .navbar .fa-bars {
+        display: block;
+        color: #fff;
+        font-size: 2.5rem;
+    }
+    .menu {
+        display: none;
+    }
+    .content-banner {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 15rem 0;
+        text-align: center;
+    }
+    .container-features {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+    .card-feature {
+        padding: 1.5rem;
+    }
+    .heading-1 {
+        font-size: 2rem;
+    }
+    .card-category {
+        height: 10rem;
+    }
+    .card-category p {
+        font-size: 1.6rem;
+        text-align: center;
+        line-height: 1;
+    }
+    .card-category span {
+        font-size: 1.2rem;
+    }
+    .container-options {
+        align-items: center;
+    }
+    .container-options span {
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+    .container-products {
+        grid-template-columns: 1fr;
+    }
+    .carrusel {
+        grid-template-rows: repeat(2, 12rem);
+    }
+    .container-blogs {
+        overflow: hidden;
+        grid-template-columns: 1fr;
+    }
+    /* Footer responsive */
+    .container-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    .footer-section {
+        width: 100%;
+    }
+    .title-footer {
+        font-size: 1.8rem;
+    }
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .contact-card {
+        width: 90%;
+        max-width: 280px;
+        padding: 1.5rem;
+    }
+    .content button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+    .menu-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    
+
